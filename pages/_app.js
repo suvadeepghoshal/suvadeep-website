@@ -2,8 +2,9 @@
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
+  const pageColorMaintain = "bg-slate-200 dark:bg-slate-900";
   return (
-    <div>
+    <div className={pageColorMaintain}>
       <Component {...pageProps} />
     </div>
   );

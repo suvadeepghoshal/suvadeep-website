@@ -25,7 +25,7 @@ function Bio() {
               {me.lastName}
             </span>
           </h1>
-          <p className="mt-3 text-base text-center text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-auto">
+          <p className="mt-3 text-base text-center text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-auto font-sans">
             {me.description}
           </p>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
