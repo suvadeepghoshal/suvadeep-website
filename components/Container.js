@@ -1,8 +1,8 @@
 import React from "react";
 import { Popover } from "@headlessui/react";
 import NavBar from "../components/NavBar";
-import Bio from "../components/Bio";
-import BlogHero from "./BlogHero";
+import Posts from "../components/Posts";
+import Home from "../components/Home";
 import { useRouter } from "next/router";
 import { routeSchema } from "../public/schemas/routeSchema";
 
@@ -16,7 +16,14 @@ function Container() {
           <Popover>
             <NavBar />
           </Popover>
-          {useRouter().route === routeData.home.route ? <Bio /> : <BlogHero />}
+          {/* Navbar is common through out all the pages, and the rest of the pages will have dynammic coompoentns based on the pages */}
+          {useRouter().route === routeData.posts.route ? (
+            <Posts />
+          ) : useRouter().route === routeData.portfolio.route ? (
+            <Portfolio />
+          ) : (
+            <Home />
+          )}
         </div>
       </div>
     </div>
