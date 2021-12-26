@@ -1,6 +1,7 @@
 # TODO
 
 - If wrong page show custom 404
+- Fixed Navbar
 - Dark mode
 - Lazy Loading
 - Personal Details Section
