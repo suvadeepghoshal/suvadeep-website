@@ -1,17 +1,22 @@
 import React from "react";
-import { infoSchema } from "../public/infoSchema";
+import { infoSchema } from "../public/schemas/infoSchema";
 import Link from "next/link";
+import { ChevronRightIcon } from "@heroicons/react/outline";
+import { ctaSchema } from "../public/schemas/ctaSchema";
+import { routeSchema } from "../public/schemas/routeSchema";
 
 function Bio() {
-  const ctaInHome = [
-    { name: "Posts", url: "/posts" },
-    { name: "Portfolio", url: "/potfolio" },
-  ];
+  // const ctaInHome = [
+  //   { name: "Posts", url: "/posts" },
+  //   { name: "Portfolio", url: "/portfolio" },
+  // ];
   let me = infoSchema();
+  let cta = ctaSchema();
+  let hrefs = routeSchema();
   return (
     <>
       <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-        <div className="sm:text-center md:text-center lg:text-left">
+        <div className="sm:text-center md:text-center lg:text-center">
           <img
             class="w-24 h-24 md:w-48 md:h-auto rounded-full mx-auto"
             src="/suvadeep.jpg"
@@ -30,48 +35,18 @@ function Bio() {
           </p>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
             <div className="rounded-md shadow">
-              <Link href={ctaInHome[0].url}>
+              <Link href={hrefs.posts.route}>
                 <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                  {ctaInHome[0].name}
-                  <span className="lg:px-1 md:px-auto sm:px-0">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </span>
+                  {cta.posts}
+                  <ChevronRightIcon className="h-4 w-4" />
                 </a>
               </Link>
             </div>
             <div className="mt-3 sm:mt-0 sm:ml-3">
-              <Link href={ctaInHome[1].url}>
+              <Link href={hrefs.portfolio.route}>
                 <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
-                  {ctaInHome[1].name}
-                  <span className="lg:px-1 md:px-auto sm:px-0">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </span>
+                  {cta.portfolio}
+                  <ChevronRightIcon className="h-4 w-4" />
                 </a>
               </Link>
             </div>
