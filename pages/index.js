@@ -10,7 +10,6 @@ function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main>
-        {/* Inserting the main container: custom component */}
         <Container />
         <footer className={footerDesign}>
           &copy;Suvadeep Ghoshal since 2021
