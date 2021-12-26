@@ -12,7 +12,7 @@ function Home() {
       <main>
         <Container />
         <footer className={footerDesign}>
-          &copy;Suvadeep Ghoshal since 2021
+          &copy;Suvadeep Ghoshal since 2021. All Rights Reserved.
         </footer>
       </main>
     </div>
