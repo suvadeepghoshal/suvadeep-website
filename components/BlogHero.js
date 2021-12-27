@@ -1,9 +1,9 @@
-import React from "react";
-import Link from "next/link";
-import {ctaSchema} from "../public/schemas/ctaSchema";
+import React from 'react'
+import Link from 'next/link'
+import { ctaSchema } from '../public/schemas/ctaSchema'
 
 function BlogHero() {
-  let cta = ctaSchema();
+  let cta = ctaSchema()
   return (
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
       <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
@@ -20,7 +20,7 @@ function BlogHero() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default BlogHero;
+export default BlogHero

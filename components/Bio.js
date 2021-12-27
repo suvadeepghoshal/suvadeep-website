@@ -1,21 +1,17 @@
-import React from "react";
-import { infoSchema } from "../public/schemas/infoSchema";
-import Link from "next/link";
-import { ChevronRightIcon } from "@heroicons/react/outline";
-import { ctaSchema } from "../public/schemas/ctaSchema";
-import { routeSchema } from "../public/schemas/routeSchema";
+import React from 'react'
+import { infoSchema } from '../public/schemas/infoSchema'
+import Link from 'next/link'
+import { ChevronRightIcon } from '@heroicons/react/outline'
+import { ctaSchema } from '../public/schemas/ctaSchema'
+import { routeSchema } from '../public/schemas/routeSchema'
 
 function Bio() {
-  // const ctaInHome = [
-  //   { name: "Posts", url: "/posts" },
-  //   { name: "Portfolio", url: "/portfolio" },
-  // ];
-  let me = infoSchema();
-  let cta = ctaSchema();
-  let hrefs = routeSchema();
+  let me = infoSchema()
+  let cta = ctaSchema()
+  let hrefs = routeSchema()
   return (
     <>
-      <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+      <main className="mt-10  max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
         <div className="sm:text-center md:text-center lg:text-center">
           <img
             class="w-24 h-24 md:w-48 md:h-auto rounded-full mx-auto"
@@ -25,7 +21,7 @@ function Bio() {
             height="512"
           />
           <h1 className="text-center text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-            <span className="block xl:inline">{me.firstName}</span>{" "}
+            <span className="block xl:inline">{me.firstName}</span>{' '}
             <span className="block text-indigo-600 xl:inline">
               {me.lastName}
             </span>
@@ -54,7 +50,7 @@ function Bio() {
         </div>
       </main>
     </>
-  );
+  )
 }
 
-export default Bio;
+export default Bio
