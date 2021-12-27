@@ -1,18 +1,14 @@
-import Container from "../components/Container";
+import Container from '../components/Container'
 function Blog() {
-  const footerDesign = "text-sm text-center m-auto px-5 py-5 text-gray-400";
   return (
     <>
-      <div className="container">
+      <div className="bg-slate-200 dark:bg-slate-900">
         <main>
-          <Container/>
-          <footer className={footerDesign}>
-            &copy;Suvadeep Ghoshal since 2021. All Rights Reserved.
-          </footer>
+          <Container />
         </main>
       </div>
     </>
-  );
+  )
 }
 
-export default Blog;
+export default Blog
