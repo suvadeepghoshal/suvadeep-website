@@ -14,7 +14,7 @@ const NotFoundPage = () => {
           <div className="text-gray-500">
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center lg:text-4xl md:text-3xl sm:text-2xl">
               <ExclamationIcon className="lg:h-11 lg:w-11 md:h-9 md:w-9 sm:h-8 sm:w-8 h-6 w-6" />
-              <h1 className="font-bold">Not Found!</h1>
+              <h1 className="font-semi-bold">Not Found!</h1>
             </div>
             <p>The page you&apos;re looking for was not found.</p>
           </div>
