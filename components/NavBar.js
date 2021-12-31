@@ -1,20 +1,24 @@
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, SunIcon, XIcon } from '@heroicons/react/outline'
 import { MoonIcon } from '@heroicons/react/solid'
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
+import { themeSchema } from '../public/schemas/themeSchema'
 import { useTheme } from 'next-themes'
+import { navigationSchema } from '../public/schemas/navigationSchema'
 
 function NavBar() {
-  const navigation = [
-    { name: 'Suvadeep Ghoshal', href: '/' },
-    { name: 'Posts', href: '/posts' },
-    {
-      name: 'Source',
-      href: 'https://github.com/suvadeepghoshal/suvadeep-website'
-    }
-  ]
-  const { theme, setTheme } = useTheme()
+  let navigation = navigationSchema()
+  let toggleTheme = themeSchema()
+  const { theme, setTheme } =
+    useTheme() /* unsafe, do not know default them for the server */
+  /* Making sure we render UI that uses the current theme when the  page is mounted on the client */
+  const [mounted, setMounted] = useState(false)
+  useEffect(function () {
+    return setMounted(true)
+  }, [])
+  if (!mounted) return null
+  /* Ends here */
   return (
     <>
       <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
@@ -55,12 +59,18 @@ function NavBar() {
             aria-label="Toggle Dark Mode"
             type="button"
             className="px-5 hidden xl:block lg:block md:block"
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            onClick={() =>
+              setTheme(
+                theme === toggleTheme.darkTheme
+                  ? toggleTheme.lightTheme
+                  : toggleTheme.darkTheme
+              )
+            }
           >
-            {theme === 'dark' ? (
-              <MoonIcon className="h-6 w-6 text-gray-500 hover:text-gray-900 dark:hover:text-gray-400" />
-            ) : (
+            {theme === toggleTheme.lightTheme ? (
               <SunIcon className="h-6 w-6 text-gray-500 hover:text-gray-900" />
+            ) : (
+              <MoonIcon className="h-6 w-6 text-gray-500 hover:text-gray-900 dark:hover:text-gray-400" />
             )}
           </a>
         </nav>
@@ -98,13 +108,14 @@ function NavBar() {
             </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map(item => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-400"
-                >
-                  {item.name}
-                </a>
+                <Link href={item.href}>
+                  <a
+                    key={item.name}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-400"
+                  >
+                    {item.name}
+                  </a>
+                </Link>
               ))}
             </div>
           </div>
