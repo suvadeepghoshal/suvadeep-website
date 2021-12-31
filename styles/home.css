@@ -2,8 +2,13 @@
 html {
   padding: 0;
   margin: 0;
-}
-body {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
+html.dark {
+  padding: 0;
+  margin: 0;
+  --tw-text-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-text-opacity));
 }
