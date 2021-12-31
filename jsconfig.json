@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es2020",
-        "jsx": "preserve",
+        "module": "nodenext",
+        "target": "ESNext",
+        "jsx": "react-jsxdev",
         "strictFunctionTypes": true
     },
     "exclude": [
