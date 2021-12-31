@@ -1,5 +1,6 @@
 import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, MoonIcon, SunIcon, XIcon } from '@heroicons/react/outline'
+import { MenuIcon, SunIcon, XIcon } from '@heroicons/react/outline'
+import { MoonIcon } from '@heroicons/react/solid'
 import { Fragment } from 'react'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
