@@ -1,17 +1,19 @@
-import { Popover, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Fragment } from "react";
-import Link from "next/link";
+import { Popover, Transition } from '@headlessui/react'
+import { MenuIcon, MoonIcon, SunIcon, XIcon } from '@heroicons/react/outline'
+import { Fragment } from 'react'
+import Link from 'next/link'
+import { useTheme } from 'next-themes'
 
 function NavBar() {
   const navigation = [
-    { name: "Suvadeep Ghoshal", href: "/" },
-    { name: "Posts", href: "/posts" },
+    { name: 'Suvadeep Ghoshal', href: '/' },
+    { name: 'Posts', href: '/posts' },
     {
-      name: "Source",
-      href: "https://github.com/suvadeepghoshal/suvadeep-website",
-    },
-  ];
+      name: 'Source',
+      href: 'https://github.com/suvadeepghoshal/suvadeep-website'
+    }
+  ]
+  const { theme, setTheme } = useTheme()
   return (
     <>
       <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
@@ -37,17 +39,29 @@ function NavBar() {
             </div>
           </div>
           <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-            {navigation.map((item) => (
+            {navigation.map(item => (
               <Link href={item.href}>
                 <a
                   key={item.name}
-                  className="font-medium text-gray-500 hover:text-gray-900"
+                  className="font-medium text-gray-500 hover:text-gray-900 dark:hover:text-gray-400"
                 >
                   {item.name}
                 </a>
               </Link>
             ))}
           </div>
+          <a
+            aria-label="Toggle Dark Mode"
+            type="button"
+            className="px-5 hidden xl:block lg:block md:block"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          >
+            {theme === 'dark' ? (
+              <MoonIcon className="h-6 w-6 text-gray-500 hover:text-gray-900 dark:hover:text-gray-400" />
+            ) : (
+              <SunIcon className="h-6 w-6 text-gray-500 hover:text-gray-900" />
+            )}
+          </a>
         </nav>
       </div>
       {/* For Mobile View */}
@@ -65,7 +79,7 @@ function NavBar() {
           focus
           className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
         >
-          <div className="rounded-lg shadow-md bg-slate-200 dark:bg-slate-900ring-1 ring-black ring-opacity-5 overflow-hidden">
+          <div className="rounded-lg shadow-md bg-slate-200 dark:bg-slate-900 ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div className="px-5 pt-4 flex items-center justify-between">
               <div>
                 <img
@@ -82,11 +96,11 @@ function NavBar() {
               </div>
             </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
+              {navigation.map(item => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-400"
                 >
                   {item.name}
                 </a>
@@ -96,7 +110,7 @@ function NavBar() {
         </Popover.Panel>
       </Transition>
     </>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar
