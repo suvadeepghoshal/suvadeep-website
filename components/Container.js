@@ -1,14 +1,11 @@
-import React from "react";
-import { Popover } from "@headlessui/react";
-import NavBar from "../components/NavBar";
-import Posts from "../components/Posts";
-import Home from "../components/Home";
-import { useRouter } from "next/router";
-import { routeSchema } from "../public/schemas/routeSchema";
+import React from 'react'
+import { Popover } from '@headlessui/react'
+import NavBar from '../components/NavBar'
+import Posts from '../components/Posts'
+import Home from '../components/Home'
+import { useRouter } from 'next/router'
 
-var routeData = routeSchema();
-
-function Container() {
+const Container = ({ routes }) => {
   return (
     <div className="relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -17,9 +14,9 @@ function Container() {
             <NavBar />
           </Popover>
           {/* Navbar is common through out all the pages, and the rest of the pages will have dynammic coompoentns based on the pages */}
-          {useRouter().route === routeData.posts.route ? (
+          {useRouter().route === routes.posts.route ? (
             <Posts />
-          ) : useRouter().route === routeData.portfolio.route ? (
+          ) : useRouter().route === routes.portfolio.route ? (
             <Portfolio />
           ) : (
             <Home />
@@ -27,7 +24,7 @@ function Container() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Container;
+export default Container

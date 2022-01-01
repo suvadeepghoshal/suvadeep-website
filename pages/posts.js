@@ -1,10 +1,11 @@
 import Container from '../components/Container'
-function Blog() {
+import { routeSchema } from '../public/schemas/routeSchema'
+const Blog = () => {
   return (
     <>
       <div className="bg-slate-200 dark:bg-slate-900">
         <main>
-          <Container />
+          <Container routes={(() => routeSchema())()} />
         </main>
       </div>
     </>
