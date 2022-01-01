@@ -7,7 +7,7 @@ import { themeSchema } from '../public/schemas/themeSchema'
 import { useTheme } from 'next-themes'
 import { navigationSchema } from '../public/schemas/navigationSchema'
 
-function NavBar() {
+const NavBar = ({ logo }) => {
   let navigation = navigationSchema()
   let toggleTheme = themeSchema()
   const { theme, setTheme } =
@@ -16,6 +16,15 @@ function NavBar() {
   const [mounted, setMounted] = useState(false)
   useEffect(() => setMounted(true), [])
   if (!mounted) return null
+  const switchTheme = () => {
+    if (mounted) {
+      setTheme(
+        theme === toggleTheme.lightTheme
+          ? toggleTheme.darkTheme
+          : toggleTheme.lightTheme
+      )
+    }
+  }
   /* Ends here */
   return (
     <>
@@ -30,7 +39,7 @@ function NavBar() {
                 <Link href={navigation[0].href}>
                   <a key={navigation[0].name}>
                     <span className="text-gray-300 font-semibold xl:text-xl lg:text-lg md:text-base sm:text-sm xs:text-xs subpixel-antialiased tracking-wide no-underline">
-                      SG
+                      {logo}
                     </span>
                   </a>
                 </Link>
@@ -59,13 +68,7 @@ function NavBar() {
             aria-label="Toggle Dark Mode"
             type="button"
             className="px-5 hidden xl:block lg:block md:block self-auto"
-            onClick={() =>
-              setTheme(
-                theme === toggleTheme.darkTheme
-                  ? toggleTheme.lightTheme
-                  : toggleTheme.darkTheme
-              )
-            }
+            onClick={switchTheme}
           >
             {theme === toggleTheme.darkTheme ? (
               <SunIcon className="cursor-pointer h-6 w-6 text-gray-500 hover:text-gray-900 dark:hover:text-gray-400" />
@@ -96,7 +99,7 @@ function NavBar() {
                 <Link href={navigation[0].href}>
                   <a key={navigation[0].name}>
                     <span className="text-gray-300 font-semibold xl:text-xl lg:text-lg md:text-base sm:text-sm xs:text-xs subpixel-antialiased tracking-wide no-underline">
-                      SG
+                      {logo}
                     </span>
                   </a>
                 </Link>
@@ -123,13 +126,7 @@ function NavBar() {
                 aria-label="Toggle Dark Mode"
                 type="button"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-400"
-                onClick={() =>
-                  setTheme(
-                    theme === toggleTheme.darkTheme
-                      ? toggleTheme.lightTheme
-                      : toggleTheme.darkTheme
-                  )
-                }
+                onClick={switchTheme}
               >
                 {theme === toggleTheme.darkTheme ? (
                   <div className="flex space-x-2 text-gray-500">
