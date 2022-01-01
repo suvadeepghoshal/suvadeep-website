@@ -1,6 +1,6 @@
 import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, SunIcon, XIcon } from '@heroicons/react/outline'
-import { MoonIcon } from '@heroicons/react/solid'
+import { MenuIcon, MoonIcon, XIcon } from '@heroicons/react/outline'
+import { SunIcon } from '@heroicons/react/solid'
 import { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { themeSchema } from '../public/schemas/themeSchema'
@@ -67,10 +67,10 @@ function NavBar() {
               )
             }
           >
-            {theme === toggleTheme.lightTheme ? (
-              <SunIcon className="cursor-pointer h-6 w-6 text-gray-500 hover:text-gray-900" />
+            {theme === toggleTheme.darkTheme ? (
+              <SunIcon className="cursor-pointer h-6 w-6 text-gray-500 hover:text-gray-900 dark:hover:text-gray-400" />
             ) : (
-              <MoonIcon className="cursor-pointer h-6 w-6 text-gray-500 hover:text-gray-900 dark:hover:text-gray-400" />
+              <MoonIcon className="cursor-pointer h-6 w-6 text-gray-500 hover:text-gray-900" />
             )}
           </a>
         </nav>
