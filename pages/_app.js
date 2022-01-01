@@ -4,7 +4,7 @@ import '../styles/home.css'
 import Main from '../components/Main'
 import { ThemeProvider } from 'next-themes'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   const pageColorMaintain = 'bg-slate-200 dark:bg-slate-900'
   const footerDesign =
     'text-sm text-center m-auto px-5 py-5 text-gray-500 dark:text-gray-600'
@@ -12,7 +12,8 @@ function MyApp({ Component, pageProps }) {
     <div className={pageColorMaintain}>
       <ThemeProvider attribute="class">
         <Main />
-        <Component {...pageProps} />
+        {/* To have unique key property */}
+        <Component {...pageProps} key={router.route} />
         <footer className={footerDesign}>
           &copy;Suvadeep Ghoshal since 2021. All Rights Reserved.
         </footer>
