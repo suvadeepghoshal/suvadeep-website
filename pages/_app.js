@@ -20,8 +20,9 @@ function MyApp({ Component, pageProps }) {
         {/* To have unique key property */}
         <Component {...pageProps} />
         <footer className={footerDesign}>
-          &copy;Suvadeep Ghoshal at {(date => date.getFullYear())(new Date())}.
-          All Rights Reserved.
+          &copy;
+          {(info => `${info.firstName} ${info.lastName}`)(infoSchema())} at{' '}
+          {(date => date.getFullYear())(new Date())}. All Rights Reserved.
         </footer>
       </ThemeProvider>
     </div>
