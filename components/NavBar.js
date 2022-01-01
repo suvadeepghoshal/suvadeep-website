@@ -119,6 +119,30 @@ function NavBar() {
                   </a>
                 </Link>
               ))}
+              <a
+                aria-label="Toggle Dark Mode"
+                type="button"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-400"
+                onClick={() =>
+                  setTheme(
+                    theme === toggleTheme.darkTheme
+                      ? toggleTheme.lightTheme
+                      : toggleTheme.darkTheme
+                  )
+                }
+              >
+                {theme === toggleTheme.darkTheme ? (
+                  <div className="flex space-x-2 text-gray-500">
+                    <span>{(mode => mode.light)(toggleTheme.mode)}</span>
+                    <SunIcon className="cursor-pointer h-6 w-6" />
+                  </div>
+                ) : (
+                  <div className="flex space-x-2 text-gray-500">
+                    <span>{(mode => mode.dark)(toggleTheme.mode)}</span>
+                    <MoonIcon className="cursor-pointer h-6 w-6" />
+                  </div>
+                )}
+              </a>
             </div>
           </div>
         </Popover.Panel>
