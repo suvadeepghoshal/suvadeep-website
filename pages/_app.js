@@ -9,11 +9,14 @@ function MyApp({ Component, pageProps }) {
   const pageColorMaintain = 'bg-slate-200 dark:bg-slate-900'
   const footerDesign =
     'text-sm text-center m-auto px-5 py-5 text-gray-500 dark:text-gray-600'
-  let userInfo = infoSchema()
   return (
     <div className={pageColorMaintain}>
       <ThemeProvider attribute="class">
-        <Main title={(() => `${userInfo.firstName} ${userInfo.lastName}`)()} />
+        <Main
+          title={(userInfo => `${userInfo.firstName} ${userInfo.lastName}`)(
+            infoSchema()
+          )}
+        />
         {/* To have unique key property */}
         <Component {...pageProps} />
         <footer className={footerDesign}>
