@@ -2,6 +2,7 @@ import { Popover } from '@headlessui/react'
 import NavBar from '../components/NavBar'
 import NotFoundPage from '../components/NotFoundPage'
 import { ctaSchema } from '../public/schemas/ctaSchema'
+import { infoSchema } from '../public/schemas/infoSchema'
 import { routeSchema } from '../public/schemas/routeSchema'
 
 function NotFound() {
@@ -16,8 +17,8 @@ function NotFound() {
               </Popover>
             </div>
             <NotFoundPage
-              header={(() => `Not Found!`)()}
-              subHeader={(() => `The page you're looking for was not found.`)()}
+              header={(info => `${info.notFoundHeader}`)(infoSchema())}
+              subHeader={(info => `${info.notFoundSubHeader}`)(infoSchema())}
               routes={(() => routeSchema())()}
               cta={(() => ctaSchema())()}
             />
