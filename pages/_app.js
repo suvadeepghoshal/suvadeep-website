@@ -21,8 +21,9 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
         <footer className={footerDesign}>
           &copy;
-          {(info => `${info.firstName} ${info.lastName}`)(infoSchema())} at{' '}
-          {(date => date.getFullYear())(new Date())}. All Rights Reserved.
+          {(date => date.getFullYear())(new Date())}{' '}
+          {(info => `${info.firstName} ${info.lastName}`)(infoSchema())}. All
+          Rights Reserved.
         </footer>
       </ThemeProvider>
     </div>
