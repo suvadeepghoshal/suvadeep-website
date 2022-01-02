@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ChevronRightIcon } from '@heroicons/react/outline'
 import { ctaSchema } from '../public/schemas/ctaSchema'
 import { routeSchema } from '../public/schemas/routeSchema'
+import PersonalInfo from './PersonalInfo'
 
 function Bio() {
   let me = infoSchema()
@@ -31,6 +32,7 @@ function Bio() {
           <p className="mt-3 text-base text-center text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-auto font-sans">
             {me.description}
           </p>
+          <PersonalInfo personal={(info => info?.personal)(me)} />
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
             <div className="rounded-md shadow">
               <Link href={hrefs.posts.route}>
