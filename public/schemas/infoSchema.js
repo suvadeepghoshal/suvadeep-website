@@ -3,7 +3,6 @@ import {
   BriefcaseIcon,
   IdentificationIcon
 } from '@heroicons/react/outline'
-import { HeartIcon } from '@heroicons/react/solid'
 export function infoSchema() {
   return {
     firstName: 'Suvadeep',
@@ -45,10 +44,6 @@ export function infoSchema() {
           icon: BriefcaseIcon
         }
       ]
-    },
-    loveTo: {
-      header: 'I ♥',
-      subHeader: 'Things I do when I am not online'
     }
   }
 }
