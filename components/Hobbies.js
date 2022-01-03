@@ -14,7 +14,7 @@ const Hobbies = () => {
             especially to mountains and forests!
           </p>
         </div>
-        {/* Add some image make in adobe spark post */}
+        {/* Add illustration made in adobe spark post */}
       </div>
     </div>
   )
