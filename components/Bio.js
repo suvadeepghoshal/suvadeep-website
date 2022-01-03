@@ -5,6 +5,7 @@ import { ChevronRightIcon } from '@heroicons/react/outline'
 import { ctaSchema } from '../public/schemas/ctaSchema'
 import { routeSchema } from '../public/schemas/routeSchema'
 import PersonalInfo from './PersonalInfo'
+import Hobbies from './Hobbies'
 
 function Bio() {
   let me = infoSchema()
@@ -33,10 +34,11 @@ function Bio() {
             {me.description}
           </p>
           <PersonalInfo personal={(info => info?.personal)(me)} />
+          <Hobbies />
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
             <div className="rounded-md shadow">
               <Link href={hrefs.posts.route}>
-                <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-700 dark:hover:bg-indigo-600 md:py-4 md:text-lg md:px-10">
                   {cta.posts}
                   <ChevronRightIcon className="h-4 w-4" />
                 </a>
