@@ -16,7 +16,7 @@ function Bio() {
       <main className="mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="sm:text-center md:text-center lg:text-center">
           <img
-            class="w-24 h-24 md:w-48 md:h-auto rounded-full mx-auto"
+            className="w-24 h-24 md:w-48 md:h-auto rounded-full mx-auto"
             src="/suvadeep.jpg"
             alt=""
             width="384"
