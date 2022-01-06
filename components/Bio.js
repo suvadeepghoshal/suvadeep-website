@@ -35,7 +35,7 @@ function Bio() {
           </p>
           <PersonalInfo personal={(info => info?.personal)(me)} />
           <Hobbies />
-          <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
+          {/* <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
             <div className="rounded-md shadow">
               <Link href={hrefs.posts.route}>
                 <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-700 dark:hover:bg-indigo-600 md:py-4 md:text-lg md:px-10">
@@ -52,7 +52,7 @@ function Bio() {
                 </a>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
     </>
