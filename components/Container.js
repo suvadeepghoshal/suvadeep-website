@@ -17,9 +17,9 @@ const Container = ({ routes }) => {
           {/* Navbar is common through out all the pages, and the rest of the pages will have dynammic coompoentns based on the pages */}
           {useRouter().route === routes.posts.route ? (
             <Posts />
-          ) : useRouter().route === routes.portfolio.route ? (
-            <Portfolio />
           ) : (
+            // ) : useRouter().route === routes.portfolio.route ? (
+            //   <Portfolio />
             <Home />
           )}
         </div>
