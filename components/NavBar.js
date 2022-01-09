@@ -54,11 +54,8 @@ const NavBar = ({ logo }) => {
           </div>
           <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
             {navigation.map(item => (
-              <Link href={item?.href}>
-                <a
-                  key={item?.name}
-                  className="font-medium text-gray-500 hover:text-gray-900 dark:hover:text-gray-400"
-                >
+              <Link href={item?.href} key={item?.name}>
+                <a className="font-medium text-gray-500 hover:text-gray-900 dark:hover:text-gray-400">
                   {item?.name}
                 </a>
               </Link>
@@ -113,11 +110,8 @@ const NavBar = ({ logo }) => {
             </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map(item => (
-                <Link href={item?.href}>
-                  <a
-                    key={item?.name}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-400"
-                  >
+                <Link href={item?.href} key={item?.name}>
+                  <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-400">
                     {item?.name}
                   </a>
                 </Link>

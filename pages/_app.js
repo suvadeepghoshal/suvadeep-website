@@ -17,7 +17,6 @@ function MyApp({ Component, pageProps }) {
             infoSchema()?.userInfo
           )}
         />
-        {/* To have unique key property */}
         <Component {...pageProps} />
         <footer className={footerDesign}>
           &copy;
