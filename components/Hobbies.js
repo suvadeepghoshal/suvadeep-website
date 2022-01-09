@@ -1,9 +1,13 @@
 import Link from 'next/link'
 import { ChevronRightIcon } from '@heroicons/react/outline'
 import { useTheme } from 'next-themes'
+import { useState, useEffect } from 'react'
 
 const Hobbies = ({ cta, routes, hobbies, themeMode }) => {
   const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+  if (!mounted) return null
   return (
     <>
       <div className="relative bg-slate-100 dark:bg-slate-800 overflow-hidden">
