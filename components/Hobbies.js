@@ -11,28 +11,28 @@ const Hobbies = ({ cta, routes, hobbies }) => {
               <div className="sm:text-center lg:text-left">
                 <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-gray-300 sm:text-5xl md:text-6xl">
                   <span className="block xl:inline">
-                    {hobbies.header.first}
+                    {hobbies?.header?.first}
                   </span>{' '}
                   <span className="block text-indigo-600 xl:inline">
-                    {hobbies.header.second}
+                    {hobbies?.header?.second}
                   </span>
                 </h1>
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  {hobbies.description}
+                  {hobbies?.description}
                 </p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
-                    <Link href={routes.posts.route}>
+                    <Link href={routes?.posts?.route}>
                       <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-700 dark:hover:bg-indigo-600 md:py-4 md:text-lg md:px-10">
-                        {cta.posts}
+                        {cta?.posts}
                         <ChevronRightIcon className="h-4 w-4" />
                       </a>
                     </Link>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <Link href={routes.portfolio.route}>
+                    <Link href={routes?.portfolio?.route}>
                       <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 dark:hover:text-gray-300 bg-indigo-100 hover:bg-indigo-200 dark:bg-slate-800 dark:hover:bg-slate-700 md:py-4 md:text-lg md:px-10">
-                        {cta.portfolio}
+                        {cta?.portfolio}
                         <ChevronRightIcon className="h-4 w-4" />
                       </a>
                     </Link>

@@ -36,8 +36,8 @@ const NavBar = ({ logo }) => {
           <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
             <div className="flex items-center justify-between w-full md:w-auto">
               <div className="cursor-pointer bg-indigo-600 rounded-3xl p-3">
-                <Link href={navigation[0].href}>
-                  <a key={navigation[0].name}>
+                <Link href={navigation[0]?.href}>
+                  <a key={navigation[0]?.name}>
                     <span className="text-gray-300 font-semibold xl:text-xl lg:text-lg md:text-base sm:text-sm xs:text-xs subpixel-antialiased tracking-wide no-underline">
                       {logo}
                     </span>
@@ -54,12 +54,12 @@ const NavBar = ({ logo }) => {
           </div>
           <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
             {navigation.map(item => (
-              <Link href={item.href}>
+              <Link href={item?.href}>
                 <a
-                  key={item.name}
+                  key={item?.name}
                   className="font-medium text-gray-500 hover:text-gray-900 dark:hover:text-gray-400"
                 >
-                  {item.name}
+                  {item?.name}
                 </a>
               </Link>
             ))}
@@ -96,8 +96,8 @@ const NavBar = ({ logo }) => {
           <div className="rounded-lg shadow-md bg-slate-200 dark:bg-slate-900 ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div className="px-5 pt-4 flex items-center justify-between">
               <div className="cursor-pointer bg-indigo-600 rounded-3xl p-3">
-                <Link href={navigation[0].href}>
-                  <a key={navigation[0].name}>
+                <Link href={navigation[0]?.href}>
+                  <a key={navigation[0]?.name}>
                     <span className="text-gray-300 font-semibold xl:text-xl lg:text-lg md:text-base sm:text-sm xs:text-xs subpixel-antialiased tracking-wide no-underline">
                       {logo}
                     </span>
@@ -113,12 +113,12 @@ const NavBar = ({ logo }) => {
             </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map(item => (
-                <Link href={item.href}>
+                <Link href={item?.href}>
                   <a
-                    key={item.name}
+                    key={item?.name}
                     className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-400"
                   >
-                    {item.name}
+                    {item?.name}
                   </a>
                 </Link>
               ))}
@@ -130,12 +130,12 @@ const NavBar = ({ logo }) => {
               >
                 {theme === toggleTheme.darkTheme ? (
                   <div className="flex space-x-2 text-gray-500">
-                    <span>{(mode => mode.light)(toggleTheme.mode)}</span>
+                    <span>{(mode => mode?.light)(toggleTheme.mode)}</span>
                     <SunIcon className="cursor-pointer h-6 w-6" />
                   </div>
                 ) : (
                   <div className="flex space-x-2 text-gray-500">
-                    <span>{(mode => mode.dark)(toggleTheme.mode)}</span>
+                    <span>{(mode => mode?.dark)(toggleTheme.mode)}</span>
                     <MoonIcon className="cursor-pointer h-6 w-6" />
                   </div>
                 )}

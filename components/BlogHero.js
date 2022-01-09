@@ -14,7 +14,7 @@ function BlogHero() {
         <div className="inline-flex rounded-md shadow">
           <Link href="/">
             <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
-              {cta.goBackHome}
+              {cta?.goBackHome}
             </a>
           </Link>
         </div>

@@ -17,10 +17,10 @@ const NotFoundPage = ({ header, subHeader, routes, cta }) => {
         </div>
         <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
           <div className="rounded-md shadow">
-            <Link href={routes.home.route}>
+            <Link href={routes?.home?.route}>
               <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-700 dark:hover:bg-indigo-600 md:py-4 md:text-lg md:px-10 transition ease-in-out hover:-translate-y-1 hover:scale-110">
                 <ChevronLeftIcon className="h-4 w-4" />
-                {cta.goBackHome}
+                {cta?.goBackHome}
               </a>
             </Link>
           </div>

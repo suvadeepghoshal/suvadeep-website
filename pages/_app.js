@@ -13,8 +13,8 @@ function MyApp({ Component, pageProps }) {
     <div className={pageColorMaintain}>
       <ThemeProvider attribute="class">
         <Main
-          title={(userInfo => `${userInfo.firstName} ${userInfo.lastName}`)(
-            infoSchema()
+          title={(userInfo => `${userInfo?.firstName} ${userInfo?.lastName}`)(
+            infoSchema()?.userInfo
           )}
         />
         {/* To have unique key property */}
@@ -22,8 +22,10 @@ function MyApp({ Component, pageProps }) {
         <footer className={footerDesign}>
           &copy;
           {(date => date.getFullYear())(new Date())}{' '}
-          {(info => `${info.firstName} ${info.lastName}`)(infoSchema())}. All
-          Rights Reserved.
+          {(info => `${info?.userInfo?.firstName} ${info?.userInfo?.lastName}`)(
+            infoSchema()
+          )}
+          . All Rights Reserved.
         </footer>
       </ThemeProvider>
     </div>
