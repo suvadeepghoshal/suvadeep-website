@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import { ChevronRightIcon } from '@heroicons/react/outline'
+import { useTheme } from 'next-themes'
 
-const Hobbies = ({ cta, routes, hobbies }) => {
+const Hobbies = ({ cta, routes, hobbies, themeMode }) => {
+  const { theme } = useTheme()
   return (
     <>
       <div className="relative bg-slate-100 dark:bg-slate-800 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+          <div className="relative z-10 pb-8 sm:pb-16 md:pb-10 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
             <main className="mt-10 mb-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:mb-12 sm:px-6 md:mt-16 md:mb-16 lg:mt-20 lg:mb-20 lg:px-8 xl:mt-28 xl:mb-28">
               <div className="sm:text-center lg:text-left">
                 <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-gray-300 sm:text-5xl md:text-6xl">
@@ -42,13 +44,23 @@ const Hobbies = ({ cta, routes, hobbies }) => {
             </main>
           </div>
         </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <img
-            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src="/hobbies.png"
-            alt="hobbies"
-          />
-        </div>
+        {theme === themeMode.lightTheme ? (
+          <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 md:pb-8 sm:pb-7 pb-6">
+            <img
+              className="h-56 w-full object-contain sm:h-72 md:h-96 lg:w-full lg:h-full"
+              src="/hobbies-banner-light.png"
+              alt="hobbies"
+            />
+          </div>
+        ) : (
+          <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 md:pb-8 sm:pb-7 pb-6">
+            <img
+              className="h-56 w-full object-contain sm:h-72 md:h-96 lg:w-full lg:h-full"
+              src="/hobbies-banner-dark.png"
+              alt="hobbies"
+            />
+          </div>
+        )}
       </div>
     </>
   )

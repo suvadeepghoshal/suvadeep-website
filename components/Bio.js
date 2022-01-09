@@ -4,6 +4,7 @@ import { ctaSchema } from '../public/schemas/ctaSchema'
 import { routeSchema } from '../public/schemas/routeSchema'
 import PersonalInfo from './PersonalInfo'
 import Hobbies from './Hobbies'
+import { themeSchema } from '../public/schemas/themeSchema'
 
 function Bio() {
   let me = infoSchema()
@@ -34,6 +35,7 @@ function Bio() {
             cta={ctaSchema()}
             routes={routeSchema()}
             hobbies={(info => info?.hobbies)(me)}
+            themeMode={themeSchema()}
           />
         </div>
       </main>
