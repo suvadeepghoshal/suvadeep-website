@@ -8,6 +8,9 @@ export function routeSchema() {
     },
     portfolio: {
       route: `/portfolio`
+    },
+    source: {
+      route: `https://github.com/suvadeepghoshal/suvadeep-website`
     }
   }
 }

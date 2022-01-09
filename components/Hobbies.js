@@ -32,9 +32,9 @@ const Hobbies = ({ cta, routes, hobbies, themeMode }) => {
                     </Link>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <Link href={routes?.portfolio?.route}>
+                    <Link href={routes?.source?.route}>
                       <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 dark:hover:text-gray-300 bg-indigo-100 hover:bg-indigo-200 dark:bg-slate-800 dark:hover:bg-slate-700 md:py-4 md:text-lg md:px-10">
-                        {cta?.portfolio}
+                        {cta?.source}
                         <ChevronRightIcon className="h-4 w-4" />
                       </a>
                     </Link>
