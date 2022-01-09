@@ -5,45 +5,61 @@ import {
 } from '@heroicons/react/outline'
 export function infoSchema() {
   return {
-    firstName: 'Suvadeep',
-    lastName: 'Ghoshal',
-    description:
-      "Hello, I'm a full stack developer based in India with a passion for building digital services/stuffs. I've a knack for all thing starting from planning designing all the way to solve real-life problems with code. Currently, I am working in at Mindtree as a Software Developer.",
-    notFoundHeader: `Not Found!`,
-    notFoundSubHeader: `Please check the URL in the address bar and try again.`,
-    logo: 'SG',
+    userInfo: {
+      logo: `SG`,
+      firstName: `Suvadeep`,
+      lastName: `Ghoshal`,
+      description: `Hello, I'm a full stack developer based in India with a passion for building digital services/stuffs. I've a knack for all thing starting from planning designing all the way to solve real-life problems with code. Currently, I am working in at Mindtree as a Software Developer.`
+    },
+    errors: {
+      404: {
+        notFoundHeader: `Not Found!`,
+        notFoundSubHeader: `Please check the URL in the address bar and try again.`
+      }
+    },
     personal: {
-      header: 'Personal Infomation',
-      subHeader: 'A better way to know me',
+      header: `Personal Infomation`,
+      subHeader: `A better way to know me`,
       personalInfo: [
         {
-          key: 'dob',
-          date: '1997',
+          key: `dob`,
+          date: `1997`,
           content: `Born in Kolkata, India, so I am ${(() =>
             new Date().getFullYear() - 1997)()} years old.`,
           icon: IdentificationIcon
         },
         {
-          key: 'college',
-          date: '2020',
+          key: `college`,
+          date: `2020`,
           content: `Completed Bachelors degree in Electrical Engineering from Academy of
         Technology (under MAKAUT), West Bengal, India.`,
           icon: AcademicCapIcon
         },
         {
-          key: 'infosys',
-          date: '2020 to 2021',
+          key: `infosys`,
+          date: `2020 to 2021`,
           content: `Worked at Infosys as a Process Executive, at Infosys Pune DC, India.`,
           icon: BriefcaseIcon
         },
         {
-          key: 'mindtree',
-          date: '2021 to present',
+          key: `mindtree`,
+          date: `2021 to present`,
           content: `Working as Software Engineer at Mindtree Limited, at Mindtree
         Bangalore (MTW), India.`,
           icon: BriefcaseIcon
         }
       ]
+    },
+    hobbies: {
+      header: {
+        first: `I ♥ to do`,
+        second: `when I'm not online`
+      },
+      description: `I love to play and make music, I'm a drummer and have been
+      keeping it as my hobby and passion for quite some time now.
+      I also enjoy solo travelling to mountains and forests. I
+      love the silence mother nature provides along with its
+      unimaginable beauty.`
     }
   }
 }

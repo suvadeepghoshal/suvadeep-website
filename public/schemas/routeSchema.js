@@ -1,13 +1,13 @@
 export function routeSchema() {
   return {
     home: {
-      route: "/",
+      route: `/`
     },
     posts: {
-      route: "/posts",
+      route: `/posts`
     },
     portfolio: {
-      route: "/portfolio"
+      route: `/portfolio`
     }
-  };
+  }
 }
