@@ -1,5 +1,3 @@
-# TODO
+# Suvadeep's Website
 
-- Fixe theme wise dark mode
-- Lazy Loading
-- Personal Details Section
+_Will write it later_
