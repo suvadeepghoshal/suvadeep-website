@@ -24,8 +24,9 @@ export function infoSchema() {
         {
           key: `dob`,
           date: `1997`,
-          content: `Born in Kolkata, India, so I am ${(() =>
-            new Date().getFullYear() - 1997)()} years old.`,
+          content: `I was born in West Bengal, India in the city of Kolkata on 11th of December. So technically I'm ${
+            new Date().getFullYear() - 1997
+          } years old.`,
           icon: IdentificationIcon
         },
         {
