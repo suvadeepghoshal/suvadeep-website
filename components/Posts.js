@@ -3,18 +3,29 @@ import BlogHero from '../components/BlogHero'
 import Link from 'next/link'
 import Tag from '../components/Tag'
 import SearchBar from './SearchBar'
+import { useState } from 'react'
 
 function Posts({ allPostsData, postInfo, formatterOptions }) {
+  const [searchVal, setSearchVal] = useState('')
+  const filteredBlogPosts = allPostsData.filter(function (post) {
+    const searchContent = post.title + post.summary + post.tags.join(' ')
+    return searchContent.toLowerCase().includes(searchVal.toLowerCase())
+  })
   return (
     <>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
         <div className="divide-y">
           <div className="pt-6 pb-8 space-y-2 md:space-y-5">
             <BlogHero header={postInfo.header} />
-            <SearchBar placeHolder={postInfo.misc.searchBarPlaceHolder} />
+            <SearchBar
+              placeHolder={postInfo.misc.searchBarPlaceHolder}
+              changing={function (e) {
+                return setSearchVal(e.target.value)
+              }}
+            />
             <ul>
-              {!allPostsData.length && postInfo.misc.noPosts}
-              {allPostsData.map(function (postData) {
+              {!filteredBlogPosts.length && postInfo.misc.noPosts}
+              {filteredBlogPosts.map(function (postData) {
                 const { id, date, title, summary, tags } = postData
                 return (
                   <li key={id} className="py-4">
