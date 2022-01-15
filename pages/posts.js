@@ -7,7 +7,9 @@ const Blog = ({ allPostsData }) => {
       <div className="bg-slate-200 dark:bg-slate-900">
         <main>
           <Container
-            routes={(() => routeSchema())()}
+            routes={(function () {
+              return routeSchema()
+            })()}
             allPostsData={allPostsData}
           />
         </main>
