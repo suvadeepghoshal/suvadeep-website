@@ -6,7 +6,7 @@ import Home from '../components/Home'
 import { useRouter } from 'next/router'
 import { infoSchema } from '../public/schemas/infoSchema'
 
-const Container = ({ routes }) => {
+const Container = ({ routes, allPostsData }) => {
   return (
     <div className="relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -16,7 +16,7 @@ const Container = ({ routes }) => {
           </Popover>
           {/* Navbar is common through out all the pages, and the rest of the pages will have dynammic coompoentns based on the pages */}
           {useRouter().route === routes.posts.route ? (
-            <Posts />
+            <Posts allPostsData={allPostsData} />
           ) : (
             // ) : useRouter().route === routes.portfolio.route ? (
             //   <Portfolio />
