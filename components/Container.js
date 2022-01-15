@@ -16,7 +16,15 @@ const Container = ({ routes, allPostsData }) => {
           </Popover>
           {/* Navbar is common through out all the pages, and the rest of the pages will have dynammic coompoentns based on the pages */}
           {useRouter().route === routes.posts.route ? (
-            <Posts allPostsData={allPostsData} />
+            <Posts
+              allPostsData={allPostsData}
+              postInfo={(function (info) {
+                return info.posts
+              })(infoSchema())}
+              formatterOptions={(function (info) {
+                return info.formatter
+              })(infoSchema())}
+            />
           ) : (
             // ) : useRouter().route === routes.portfolio.route ? (
             //   <Portfolio />
