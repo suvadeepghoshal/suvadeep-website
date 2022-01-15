@@ -1,45 +1,35 @@
 import React from 'react'
 import BlogHero from '../components/BlogHero'
-import { ctaSchema } from '../public/schemas/ctaSchema'
 import Link from 'next/link'
 import Tag from '../components/Tag'
 import SearchBar from './SearchBar'
 
-function Posts({ allPostsData }) {
+function Posts({ allPostsData, postInfo, formatterOptions }) {
   return (
     <>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
         <div className="divide-y">
           <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-            <BlogHero
-              goBack={(function (cta) {
-                return cta.goBackHome
-              })(ctaSchema())}
-            />
-            <SearchBar placeHolder={`Search Posts`} />
+            <BlogHero header={postInfo.header} />
+            <SearchBar placeHolder={postInfo.misc.searchBarPlaceHolder} />
             <ul>
-              {!allPostsData.length && 'No posts found.'}
-              {allPostsData.map(postData => {
+              {!allPostsData.length && postInfo.misc.noPosts}
+              {allPostsData.map(function (postData) {
                 const { id, date, title, summary, tags } = postData
                 return (
                   <li key={id} className="py-4">
                     <article className="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
                       <dl>
-                        <dt className="sr-only">Published on</dt>
+                        <dt className="sr-only">{postInfo.misc.publishedOn}</dt>
                         <dd className="text-base font-medium leading-6 text-indigo-600 dark:text-inidgo-500">
                           <time dateTime={date}>
-                            {(function (date) {
-                              const options = {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric'
-                              }
+                            {(function (date, options) {
                               const now = new Date(date).toLocaleDateString(
-                                'en-US' /* Website is unilingual, so static locale */,
-                                options
+                                options.locale /* Website is unilingual, so static locale */,
+                                options.date
                               )
                               return now
-                            })(date)}
+                            })(date, formatterOptions)}
                           </time>
                         </dd>
                       </dl>
@@ -52,15 +42,13 @@ function Posts({ allPostsData }) {
                               </a>
                             </Link>
                           </h3>
-                          {tags.length ? (
-                            <div className="flex flex-wrap">
-                              {tags.map(tag => (
-                                <Tag key={tag} text={tag} />
-                              ))}
-                            </div>
-                          ) : (
-                            `No tags`
-                          )}
+                          <div className="flex flex-wrap">
+                            {tags.length
+                              ? tags.map(function (tag) {
+                                  return <Tag key={tag} text={tag} />
+                                })
+                              : postInfo.misc.noTags}
+                          </div>
                         </div>
                         <div className="prose text-gray-500 max-w-none">
                           {summary}
