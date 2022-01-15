@@ -61,6 +61,26 @@ export function infoSchema() {
       I also enjoy solo travelling to mountains and forests. I
       love the silence mother nature provides along with its
       unimaginable beauty.`
+    },
+    posts: {
+      header: {
+        first: `Welcome to`,
+        second: `POSTS!`
+      },
+      misc: {
+        searchBarPlaceHolder: `Search Posts`,
+        noPosts: `No posts found.`,
+        noTags: `No tags`,
+        publishedOn: `Published on`
+      }
+    },
+    formatter: {
+      date: {
+        year: `numeric`,
+        month: `long`,
+        day: `numeric`
+      },
+      locale: `${navigator.language}` /* Get the viewing user's locale from the browser */
     }
   }
 }
