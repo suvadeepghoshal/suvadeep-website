@@ -23,7 +23,7 @@ function Posts({ allPostsData, postInfo, formatterOptions }) {
                 return setSearchVal(e.target.value)
               }}
             />
-            <ul>
+            <ul className="text-gray-500">
               {!filteredBlogPosts.length && postInfo.misc.noPosts}
               {filteredBlogPosts.map(function (postData) {
                 const { id, date, title, summary, tags } = postData
