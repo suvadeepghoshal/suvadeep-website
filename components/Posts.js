@@ -52,11 +52,15 @@ function Posts({ allPostsData }) {
                               </a>
                             </Link>
                           </h3>
-                          <div className="flex flex-wrap">
-                            {tags.map(tag => (
-                              <Tag key={tag} text={tag} />
-                            ))}
-                          </div>
+                          {tags.length ? (
+                            <div className="flex flex-wrap">
+                              {tags.map(tag => (
+                                <Tag key={tag} text={tag} />
+                              ))}
+                            </div>
+                          ) : (
+                            `No tags`
+                          )}
                         </div>
                         <div className="prose text-gray-500 max-w-none">
                           {summary}
