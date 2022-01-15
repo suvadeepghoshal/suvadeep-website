@@ -1,6 +1,7 @@
 import Container from '../components/Container'
 import { getSortedPostsData } from '../lib/posts'
 import { routeSchema } from '../public/schemas/routeSchema'
+
 const Blog = ({ allPostsData }) => {
   return (
     <>
