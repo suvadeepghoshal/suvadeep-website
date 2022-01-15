@@ -11,6 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
+    "esbuild": "^0.14.11",
+    "gray-matter": "^4.0.3",
     "next": "^12.0.7",
     "next-themes": "^0.0.15",
     "react": "^17.0.2",
