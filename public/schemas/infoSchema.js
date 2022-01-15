@@ -69,7 +69,7 @@ export function infoSchema() {
       },
       misc: {
         searchBarPlaceHolder: `Search Posts`,
-        noPosts: `No posts found.`,
+        noPosts: `Sorry, no posts found!`,
         noTags: `No tags`,
         publishedOn: `Published on`
       }
@@ -80,7 +80,7 @@ export function infoSchema() {
         month: `long`,
         day: `numeric`
       },
-      locale: `${navigator.language}` /* Get the viewing user's locale from the browser */
+      locale: `en-US` /* Get the viewing user's locale from the browser */
     }
   }
 }
