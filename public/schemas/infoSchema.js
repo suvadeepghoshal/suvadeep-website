@@ -80,7 +80,7 @@ export function infoSchema() {
         month: `long`,
         day: `numeric`
       },
-      locale: `en-US` /* Get the viewing user's locale from the browser */
+      locale: `en-US` /* TODO: dynamic do some research */
     }
   }
 }
