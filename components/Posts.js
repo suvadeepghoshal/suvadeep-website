@@ -47,7 +47,7 @@ function Posts({ allPostsData, postInfo, formatterOptions }) {
                       <div className="space-y-3 xl:col-span-3">
                         <div>
                           <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                            <Link href={`/blog/${id}`}>
+                            <Link href={`/posts/${id}`}>
                               <a className="text-gray-800 dark:text-gray-300">
                                 {title}
                               </a>
