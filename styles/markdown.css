@@ -1,0 +1,48 @@
+.markdown {
+  @apply m-0 text-gray-700 dark:text-gray-300;
+}
+.markdown > h1 {
+  @apply text-4xl font-bold pt-4 pb-4;
+}
+.markdown > h2 {
+  @apply text-3xl font-semibold pt-4 pb-4;
+}
+.markdown > h3 {
+  @apply text-2xl pt-4 pb-4;
+}
+.markdown > h4 {
+  @apply text-xl pt-4 pb-4;
+}
+.markdown > h5 {
+  @apply text-lg pt-4 pb-4;
+}
+.markdown > h6 {
+  @apply text-base pt-4 pb-4;
+}
+.markdown > p + span + div + ul + li + ol {
+  @apply text-base;
+}
+.markdown > ul {
+  @apply pl-8 list-disc;
+}
+.markdown > ol {
+  @apply pl-8 list-decimal;
+}
+.markdown > ul > li:last-of-type ul {
+  @apply pl-8 list-disc;
+}
+.markdown > ol > li:last-of-type ol {
+  @apply pl-8 list-decimal;
+}
+.markdown > p {
+  @apply pt-4 pb-4;
+}
+.markdown > span {
+  @apply pt-2 pb-2;
+}
+.markdown > blockquote {
+  @apply px-5 py-3 font-thin italic text-sm text-gray-700 dark:text-gray-200;
+}
+.markdown > p > a {
+  @apply text-indigo-600 hover:text-indigo-700 hover:dark:text-indigo-500 !important;
+}
