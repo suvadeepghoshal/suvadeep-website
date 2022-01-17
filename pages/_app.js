@@ -1,6 +1,8 @@
 // This is acting as the main entry point for all the pages in the appplication
 import '../styles/globals.css'
 import '../styles/home.css'
+import '../styles/markdown.css'
+import '../styles/code.css'
 import Main from '../components/Main'
 import { ThemeProvider } from 'next-themes'
 import { infoSchema } from '../public/schemas/infoSchema'
