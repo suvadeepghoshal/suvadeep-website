@@ -46,3 +46,6 @@
 .markdown > p > a {
   @apply text-indigo-600 hover:text-indigo-700 hover:dark:text-indigo-500 !important;
 }
+.markdown > table > tbody > tr > td {
+  @apply pl-4 pr-4 !important;
+}
