@@ -68,7 +68,10 @@ const Posts = function ({ postData }) {
     </>
   )
 }
-
+/**
+ *
+ * @returns dynamic routes based on the id of the posts
+ */
 export async function getStaticPaths() {
   const paths = getAllPostId()
   return {
@@ -76,7 +79,11 @@ export async function getStaticPaths() {
     fallback: false
   }
 }
-
+/**
+ *
+ * @param {key} param0 each param has an object containing the id of the md file
+ * @returns md content being converted into readable html and loads before the js of the current page loads
+ */
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
   return {
