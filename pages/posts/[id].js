@@ -20,17 +20,17 @@ const Posts = function ({ postData }) {
                   />
                 </Popover>
                 <div
-                  key={postData.id}
+                  key={postData?.id}
                   className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
                 >
                   <div className="divide-y">
                     <div className="pt-6 pb-8 space-y-2 md:space-y-5">
                       <div className="space-y-3 xl:col-span-3">
                         <h3 className="text-4xl font-bold leading-8 tracking-tight text-indigo-600">
-                          {postData.title}
+                          {postData?.title}
                         </h3>
                         <div className="flex flex-wrap text-gray-400">
-                          <time dateTime={postData.date}>
+                          <time dateTime={postData?.date}>
                             {(function (date, options) {
                               const now = new Date(date).toLocaleDateString(
                                 options.locale /* Website is unilingual, so static locale */,
@@ -51,9 +51,9 @@ const Posts = function ({ postData }) {
                           {postData?.summary}
                         </div>
                         <div
-                          className="text-gray-700 dark:text-gray-300 markdown"
+                          className="markdown"
                           dangerouslySetInnerHTML={{
-                            __html: postData.contentHtml
+                            __html: postData?.contentHtml
                           }}
                         />
                       </div>
