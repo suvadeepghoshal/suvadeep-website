@@ -19,6 +19,8 @@ $PROJECT_ROOT
 ├── components
 │   # Non-react modules
 ├── lib
+│   # Stylesheets
+├── styles
 │   # Static files for images
 ├── public
 │   # Public schemas containing the datas in the website
