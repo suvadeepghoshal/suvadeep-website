@@ -6,8 +6,6 @@ draft: false
 summary: 'This is the current website that you are in. Yes it is my website!'
 ---
 
-# Suvadeep's Website
-
 https://suvadeepghoshal.vercel.app
 
 ## Stack
