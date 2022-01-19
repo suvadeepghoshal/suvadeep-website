@@ -3,6 +3,7 @@ import { Popover } from '@headlessui/react'
 import NavBar from 'src/components/NavBar'
 import { infoSchema } from 'public/schemas/infoSchema'
 import Link from 'next/link'
+import { routeSchema } from 'public/schemas/routeSchema'
 
 const Posts = function ({ postData }) {
   return (
@@ -40,7 +41,7 @@ const Posts = function ({ postData }) {
                             })(postData.date, infoSchema().formatter)}
                           </time>
                           <div className="pl-3">
-                            <Link href="/posts">
+                            <Link href={routeSchema().posts.route}>
                               <a className="text-indigo-600 hover:dark:text-indigo-500 hover:text-indigo-700">
                                 Go Back
                               </a>
