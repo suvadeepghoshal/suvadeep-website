@@ -49,3 +49,7 @@
 .markdown > table > tbody > tr > td {
   @apply pl-4 pr-4 !important;
 }
+.markdown > div.remark-highlight > pre {
+  @apply px-5 py-3 font-mono text-sm font-bold text-gray-700 dark:text-gray-200 rounded-t;
+  @apply mt-0 rounded-md;
+}
