@@ -53,3 +53,9 @@
   @apply px-5 py-3 font-mono text-sm font-bold text-gray-700 dark:text-gray-200 rounded-t;
   @apply mt-0 rounded-md;
 }
+.markdown > ul > li > a {
+  @apply text-indigo-600 hover:text-indigo-700 hover:dark:text-indigo-500 !important;
+}
+.markdown > ol > li > a {
+  @apply text-indigo-600 hover:text-indigo-700 hover:dark:text-indigo-500 !important;
+}
