@@ -57,5 +57,7 @@ $PROJECT_ROOT
 - If your content is published, make sure to leave in the e-mail your contact link, and we can have them tagged in the site.
 
 If you're looking for in depth guide to this website, keep an eye on the posts section, will be published eventually
-_Author_: Suvadeep Ghoshal _peace out!_
+
+_Author_: **Suvadeep Ghoshal** _peace out :v:_
+
 Date: Maintained as of 22th Jan, 2022
