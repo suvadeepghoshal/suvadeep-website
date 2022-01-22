@@ -34,3 +34,28 @@ $PROJECT_ROOT
 `- Contains all the styles used
 
 ```
+
+## License
+
+- This project has MIT License. You can fork this project or clone it and modify it out of your own.
+- But if you publish it, you have to link it too [Suvadeep Ghoshal](https://suvadeepghoshal.vercel.app)
+- The images that are/will used/use in this project are copyright to [Suvadeep Ghoshal](https://suvadeepghoshal.vercel.com). Usage of the images from this project is not allowed.
+
+## Support
+
+- If you like this consider giving a star
+- If you wish to post something, then feel free to send your content at *ghoshalsuvadeep594@gmail.com*
+
+### There are some rules if you're looking to post
+
+- The content should be a markdown file.
+- The content should not contain any explicit content or shall offend any race, caste, religion.
+- There is a strict no on lewd content, such content if submitted may be reported with out the authors consent.
+- The content shall not be on any political or controversial areas.
+- The content should not contain any curse words or shall not have any negative impact on the readers mind.
+- The content will be reviewed by Suvadeep Ghoshal and if he sees fit then will be published.
+- If your content is published, make sure to leave in the e-mail your contact link, and we can have them tagged in the site.
+
+If you're looking for in depth guide to this website, keep an eye on the posts section, will be published eventually
+_Author_: Suvadeep Ghoshal _peace out!_
+Date: Maintained as of 22th Jan, 2022
