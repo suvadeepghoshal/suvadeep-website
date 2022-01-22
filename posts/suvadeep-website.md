@@ -1,9 +1,9 @@
 ---
 title: 'Suvadeep Website'
-date: '2022-01-19'
+date: '2022-01-22'
 tags: ['github', 'next js', 'tailwind css']
 draft: false
-summary: 'This is the current website that you are in. Yes it is my website!'
+summary: 'This is my website, which is created by me, where I post things that interests me. I plan to add lots of new and cool features in the future. This website defines me and all the things that brings enthusiasm in me!'
 ---
 
 https://suvadeepghoshal.vercel.app
