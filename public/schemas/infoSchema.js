@@ -70,7 +70,6 @@ export function infoSchema() {
       misc: {
         searchBarPlaceHolder: `Search Posts`,
         noPosts: `Sorry, no posts found!`,
-        noTags: `No tags`,
         publishedOn: `Published on`
       }
     },
