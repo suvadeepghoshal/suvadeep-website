@@ -1,5 +1,5 @@
 export function navigationSchema() {
-  const navigationList = [
+  return [
     { name: `Suvadeep Ghoshal`, href: `/` },
     { name: `Posts`, href: `/posts` },
     {
@@ -7,5 +7,4 @@ export function navigationSchema() {
       href: `https://github.com/suvadeepghoshal/suvadeep-website`
     }
   ]
-  return navigationList
 }

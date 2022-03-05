@@ -33,11 +33,10 @@ const Posts = function ({ postData }) {
                         <div className="flex flex-wrap text-gray-400">
                           <time dateTime={postData?.date}>
                             {(function (date, options) {
-                              const now = new Date(date).toLocaleDateString(
+                              return new Date(date).toLocaleDateString(
                                 options.locale /* Website is unilingual, so static locale */,
                                 options.date
                               )
-                              return now
                             })(postData.date, infoSchema().formatter)}
                           </time>
                           <div className="pl-3">

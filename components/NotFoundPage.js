@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import { ChevronLeftIcon } from '@heroicons/react/outline'
-import { ExclamationIcon } from '@heroicons/react/outline'
+import { ChevronLeftIcon, ExclamationIcon } from '@heroicons/react/outline'
 
 const NotFoundPage = ({ header, subHeader, routes, cta }) => {
   return (
