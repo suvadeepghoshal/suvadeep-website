@@ -8,9 +8,7 @@ const Blog = ({ allPostsData }) => {
       <div className="bg-slate-200 dark:bg-slate-900">
         <main>
           <Container
-            routes={(function () {
-              return routeSchema()
-            })()}
+            routes={(() => routeSchema())()}
             allPostsData={allPostsData}
           />
         </main>
@@ -19,7 +17,7 @@ const Blog = ({ allPostsData }) => {
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const allPostsData = getSortedPostsData()
   return {
     props: {

@@ -5,7 +5,7 @@ import { infoSchema } from 'public/schemas/infoSchema'
 import Link from 'next/link'
 import { routeSchema } from 'public/schemas/routeSchema'
 
-const Posts = function ({ postData }) {
+const Posts = ({ postData }) => {
   return (
     <>
       <div className="bg-slate-200 dark:bg-slate-900">
@@ -14,11 +14,7 @@ const Posts = function ({ postData }) {
             <div className="max-w-7xl mx-auto">
               <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32">
                 <Popover>
-                  <NavBar
-                    logo={(function (info) {
-                      return info?.userInfo?.logo
-                    })(infoSchema())}
-                  />
+                  <NavBar logo={(info => info?.userInfo?.logo)(infoSchema())} />
                 </Popover>
                 <div
                   key={postData?.id}
@@ -32,12 +28,11 @@ const Posts = function ({ postData }) {
                         </h3>
                         <div className="flex flex-wrap text-gray-400">
                           <time dateTime={postData?.date}>
-                            {(function (date, options) {
-                              return new Date(date).toLocaleDateString(
+                            {((date, options) =>
+                              new Date(date).toLocaleDateString(
                                 options.locale /* Website is unilingual, so static locale */,
                                 options.date
-                              )
-                            })(postData.date, infoSchema().formatter)}
+                              ))(postData.date, infoSchema().formatter)}
                           </time>
                           <div className="pl-3">
                             <Link href={routeSchema().posts.route}>
@@ -72,7 +67,7 @@ const Posts = function ({ postData }) {
  *
  * @returns dynamic routes based on the id of the posts
  */
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const paths = getAllPostId()
   return {
     paths,
@@ -84,7 +79,7 @@ export async function getStaticPaths() {
  * @param {key} param0 each param has an object containing the id of the md file
  * @returns md content being converted into readable html and loads before the js of the current page loads
  */
-export async function getStaticProps({ params }) {
+export const getStaticProps = async ({ params }) => {
   const postData = await getPostData(params.id)
   return {
     props: {

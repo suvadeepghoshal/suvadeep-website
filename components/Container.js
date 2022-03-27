@@ -18,12 +18,8 @@ const Container = ({ routes, allPostsData }) => {
           {useRouter().route === routes.posts.route ? (
             <Posts
               allPostsData={allPostsData}
-              postInfo={(function (info) {
-                return info.posts
-              })(infoSchema())}
-              formatterOptions={(function (info) {
-                return info.formatter
-              })(infoSchema())}
+              postInfo={(info => info.posts)(infoSchema())}
+              formatterOptions={(info => info.formatter)(infoSchema())}
             />
           ) : (
             // ) : useRouter().route === routes.portfolio.route ? (

@@ -5,7 +5,7 @@ import { ctaSchema } from '../public/schemas/ctaSchema'
 import { infoSchema } from '../public/schemas/infoSchema'
 import { routeSchema } from '../public/schemas/routeSchema'
 
-function NotFound() {
+const NotFound = () => {
   return (
     <div className="bg-slate-200 dark:bg-slate-900">
       <main>

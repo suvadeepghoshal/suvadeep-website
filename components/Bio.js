@@ -6,7 +6,7 @@ import PersonalInfo from './PersonalInfo'
 import Hobbies from './Hobbies'
 import { themeSchema } from '../public/schemas/themeSchema'
 
-function Bio() {
+const Bio = () => {
   let me = infoSchema()
   return (
     <>

@@ -3,9 +3,9 @@ import BlogHero from '../components/BlogHero'
 import Link from 'next/link'
 import SearchBar from './SearchBar'
 
-function Posts({ allPostsData, postInfo, formatterOptions }) {
+const Posts = ({ allPostsData, postInfo, formatterOptions }) => {
   const [searchVal, setSearchVal] = useState('')
-  const filteredBlogPosts = allPostsData.filter(function (post) {
+  const filteredBlogPosts = allPostsData.filter(post => {
     const searchContent = post.title + post.summary
     return searchContent.toLowerCase().includes(searchVal.toLowerCase())
   })
@@ -17,13 +17,11 @@ function Posts({ allPostsData, postInfo, formatterOptions }) {
             <BlogHero header={postInfo.header} />
             <SearchBar
               placeHolder={postInfo.misc.searchBarPlaceHolder}
-              changing={function (e) {
-                return setSearchVal(e.target.value)
-              }}
+              changing={e => setSearchVal(e.target.value)}
             />
             <ul className="text-gray-500">
               {!filteredBlogPosts.length && postInfo.misc.noPosts}
-              {filteredBlogPosts.map(function (postData) {
+              {filteredBlogPosts.map(postData => {
                 const { id, date, title, summary } = postData
                 return (
                   <li key={id} className="py-4">
@@ -32,12 +30,11 @@ function Posts({ allPostsData, postInfo, formatterOptions }) {
                         <dt className="sr-only">{postInfo.misc.publishedOn}</dt>
                         <dd className="text-base font-medium leading-6 text-indigo-600 dark:text-inidgo-500">
                           <time dateTime={date}>
-                            {(function (D, options) {
-                              return new Date(D).toLocaleDateString(
+                            {((D, options) =>
+                              new Date(D).toLocaleDateString(
                                 options.locale /* Website is unilingual, so static locale */,
                                 options.date
-                              )
-                            })(date, formatterOptions)}
+                              ))(date, formatterOptions)}
                           </time>
                         </dd>
                       </dl>

@@ -1,6 +1,6 @@
 import { SearchIcon } from '@heroicons/react/outline'
 
-const SearchBar = function ({ placeHolder, changing }) {
+const SearchBar = ({ placeHolder, changing }) => {
   return (
     <>
       <div className="relative max-w-lg">
