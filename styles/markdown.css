@@ -23,16 +23,16 @@
   @apply text-base;
 }
 .markdown > ul {
-  @apply pl-8 list-disc;
+  @apply md:pl-5 lg:pl-8 xl:pl-8 2xl:pl-8 pl-4 list-disc;
 }
 .markdown > ol {
-  @apply pl-8 list-decimal;
+  @apply md:pl-5 lg:pl-8 xl:pl-8 2xl:pl-8 pl-4 list-decimal;
 }
 .markdown > ul > li:last-of-type ul {
-  @apply pl-8 list-disc;
+  @apply md:pl-5 lg:pl-8 xl:pl-8 2xl:pl-8 pl-4 list-disc;
 }
 .markdown > ol > li:last-of-type ol {
-  @apply pl-8 list-decimal;
+  @apply md:pl-5 lg:pl-8 xl:pl-8 2xl:pl-8 pl-4 list-decimal;
 }
 .markdown > p {
   @apply pt-4 pb-4;
